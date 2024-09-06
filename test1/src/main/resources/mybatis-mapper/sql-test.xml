@@ -7,16 +7,21 @@
 		SELECT * FROM TEST_PRODUCT
 	</select>
 	
+	
+	<select id="boardList" parameterType="hashmap" resultType="com.example.test1.model.Test">
+		SELECT * FROM TBL_BOARD
+	</select>
+	
+	
 	<delete id="removeList" parameterType="hashmap">
 		DELETE FROM
 		TEST_PRODUCT 
 		WHERE productNo=#{productNo}
 	</delete>
 	
-	<insert id="addList" parameterType="hashmap" >
+	<insert id="addList" parameterType="hashmap">
 		INSERT INTO 
 		TEST_PRODUCT(PRODUCT_NO, PRODUCT_NAME, PRODUCT_PRICE) 
 		VALUES (#{productNo}, #{productName}, #{productPrice})
-	
 	</insert>
 </mapper>

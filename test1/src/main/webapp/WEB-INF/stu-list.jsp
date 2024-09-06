@@ -46,13 +46,13 @@
 					
 				};
 				$.ajax({
-					url:"/test1.dox",
+					url:"/stu.dox",
 					dataType:"json",	
 					type : "POST", 
 					data : nparmap,
 					success : function(data) { 
 						console.log(data);
-						self.test = data.test;
+						
 						
 						
 					}
@@ -83,8 +83,7 @@
 		
         mounted() {
 			//-----
-			var self = this;
-			self.fnGetList();
+		
         }
     });
     app.mount('#app');

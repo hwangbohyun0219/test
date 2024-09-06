@@ -9,8 +9,11 @@ import com.example.test1.model.Test;
 
 @Mapper
 public interface TestMapper {
-	Test testList(HashMap<String, Object> map);
 	
+	List<Test> testList(HashMap<String, Object> map);
+	
+	List<Test> boardList(HashMap<String, Object> map);
+	 
 	Test removeList(HashMap<String, Object> map);
 	
 	List<Test> addList(HashMap<String, Object> map);
