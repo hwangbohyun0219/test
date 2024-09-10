@@ -11,19 +11,6 @@
 </style>
 <body>
 	<div id="app">
-<!--	<div>
-		
-		<input  id= @click="fnGetList()" placeholder="1~15 입력(PK값)">
-		<button>검색</button>
-		<button @click="fnRemove()">삭제</button>
-	</div>-->
-	
-		
-	
-		
-		
-		
-		
 		
 	</div>
 </body>
@@ -45,45 +32,23 @@
 					
 				};
 				$.ajax({
-					url:"/test1.dox",
+					url:"/.dox",
 					dataType:"json",	
 					type : "POST", 
 					data : nparmap,
 					success : function(data) { 
 						console.log(data);
-						self.test = data.test;
-						
 						
 					}
 				});
             }
         },
-		fnRemove(num){
-			var self = this;
-			var nparmap = {
-				productNo:num
-			};
-			$.ajax({
-				url:"test.dox",
-				dataType:"json",	
-				type : "POST", 
-				data : nparmap,
-				success : function(data) { 
-					console.log(data);
-					self.fnGetList();
-				}
-			});
-			
-			
-			
-		},
-		
+
 		
 		
         mounted() {
 			//-----
-			var self = this;
-			self.fnGetList();
+			
         }
     });
     app.mount('#app');
