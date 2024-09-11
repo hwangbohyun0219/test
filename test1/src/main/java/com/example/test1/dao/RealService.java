@@ -6,4 +6,9 @@ public interface RealService {
 	
 	HashMap<String, Object> realSearch(HashMap<String, Object> map);
 	
+	
+	HashMap<String, Object> removeReal(HashMap<String, Object> map);
+	
+	
+	
 }

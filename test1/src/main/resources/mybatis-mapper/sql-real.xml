@@ -2,8 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.test1.mapper.TestMapper">
-	<select id="RealList" parameterType="hashmap" resultType="com.example.test1.model.Stu">
-		SELECT * FROM Book
+<mapper namespace="com.example.test1.mapper.RealMapper">
+	<select id="RealList" parameterType="hashmap" resultType="com.example.test1.model.Real">
+		SELECT * FROM BOOK
 	</select>
+	
+	<delete id="deleteList" parameterType="hashmap">
+		DELETE FROM BOOK WHERE bookId = #{bookId}
+	</delete>
+	
+	
+	
 </mapper>

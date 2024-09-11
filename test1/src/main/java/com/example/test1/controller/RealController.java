@@ -22,23 +22,31 @@ import com.google.gson.Gson;
 public class RealController {
 	
 	@Autowired
-	RealService realservice;
+	RealService realService;
 	
 	@RequestMapping("/real.do") 
     public String main(Model model) throws Exception{
 
-        return "/real";
+        return "/real-list";
     }
 	
 	@RequestMapping(value = "/real.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String realSearch(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		
-		
-		
+		resultMap = realService.realSearch(map);
 		return new Gson().toJson(resultMap);
 	}
+	
+	@RequestMapping(value = "/remove2.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String removereal(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap = realService.removeReal(map);
+		return new Gson().toJson(resultMap);
+	}
+	
+	
 }
 
 

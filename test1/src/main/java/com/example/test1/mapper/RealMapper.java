@@ -13,4 +13,6 @@ public interface RealMapper {
 	
 	List<Real> RealList(HashMap<String, Object> map);
 	
+	void deleteList(HashMap<String, Object> map);
+	
 }
